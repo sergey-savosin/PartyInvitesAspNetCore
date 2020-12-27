@@ -1,0 +1,37 @@
+﻿@model PartyInvitesAspNetCore.Models.GuestResponse
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width"/>
+	<title>Форма опроса</title>
+</head>
+<body>
+	<form asp-action="RsvpForm" method="post">
+		<div>
+			<label asp-for="Name">Ваше имя:</label>
+			<input asp-for="Name" />
+		</div>
+		<div>
+			<label asp-for="Email">Ваш Email:</label>
+			<input asp-for="Email" />
+		</div>
+		<div>
+			<label asp-for="Phone">Ваш номер телефона:</label>
+			<input asp-for="Phone" />
+		</div>
+		<div>
+			<label>Вы придёте на встречу?</label>
+			<select asp-for="WillAttend">
+				<option value="">Выберите вариант</option>
+				<option	value="true">Да, я пойду</option>
+				<option	value="false">Нет, я не пойду</option>
+			</select>
+		</div>
+		<button type="submit">Отправить форму</button>
+	</form>
+</body>
+</html>
